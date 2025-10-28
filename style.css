@@ -103,6 +103,6 @@ footer { text-align:center; padding:2rem 0; background:#1e1e1e; margin-top:2rem;
 @media(max-width:768px){
     .dashboard-cards { flex-direction:column; }
     .nav-links { display:none; flex-direction:column; background:#1e1e1e; position:absolute; top:60px; right:0; width:200px; padding:1rem; border-radius:5px; }
-    .nav-links.show { display:flex; }
+    .nav-links.active { display:flex; }
     .hamburger { display:flex; }
 }
