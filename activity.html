@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity - J.S.C.U.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">J.S.C.U.</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="activity.html">Activity</a></li>
+            <li><a href="statements.html">Statements</a></li>
+            <li><a href="income.html">Income</a></li>
+            <li><a href="profitloss.html">Profit/Loss</a></li>
+            <li><a href="bookkeeping.html">Bookkeeping</a></li>
+        </ul>
+        <div class="hamburger">
+            <div></div><div></div><div></div>
+        </div>
+    </nav>
+
+    <div class="current-time" id="current-time"></div>
+
+    <main>
+        <h1>Current Balance: $438,002.09</h1>
+
+        <section class="activity-table">
+            <h2>Transactions</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vendor ID</th>
+                        <th>Amount</th>
+                        <th>Updated Balance</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 20 Random Transactions -->
+                    <script>
+                        const tbody = document.write('<tbody>');
+                        let balance = 438002.09;
+                        const vendors = [];
+                        for(let i=0;i<20;i++){
+                            const letters = Array.from({length:5},()=>String.fromCharCode(65+Math.floor(Math.random()*26))).join('');
+                            const numbers = Array.from({length:10},()=>Math.floor(Math.random()*10)).join('');
+                            vendors.push(`[${letters}${numbers} ${String(i+1).padStart(3,'0')}]`);
+                        }
+
+                        const startDate = new Date('2025-10-01');
+                        const endDate = new Date();
+                        let rows = '';
+                        for(let i=19;i>=0;i--){
+                            const amt = Math.floor(Math.random()*5900)+100;
+                            const sign = Math.random()>0.5?1:-1;
+                            balance += amt*sign;
+                            const date = new Date(startDate.getTime() + Math.random()*(endDate.getTime()-startDate.getTime()));
+                            const dateStr = date.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+                            const amtStr = (sign>0?'+ ':'- $')+Math.abs(amt).toLocaleString();
+                            const balanceStr = '$'+balance.toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2});
+                            rows += `<tr><td>${vendors[i]}</td><td>${amtStr}</td><td>${balanceStr}</td><td>${dateStr}</td></tr>`;
+                        }
+                        document.write(rows);
+                        document.write('</tbody>');
+                    </script>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-logo">J.S.C.U.</div>
+        <p>© 2025 Jarvis Stark Computing Unit</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

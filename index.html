@@ -1,11 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J.S.C.U. - Jarvis Stark Computing Unit</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello, world!</h1>
-    <p>This is my first GitHub Page!</p>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">J.S.C.U.</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="activity.html">Activity</a></li>
+            <li><a href="statements.html">Statements</a></li>
+            <li><a href="income.html">Income</a></li>
+            <li><a href="profitloss.html">Profit/Loss</a></li>
+            <li><a href="bookkeeping.html">Bookkeeping</a></li>
+        </ul>
+        <div class="hamburger">
+            <div></div><div></div><div></div>
+        </div>
+    </nav>
+
+    <!-- Current Time -->
+    <div class="current-time" id="current-time"></div>
+
+    <!-- Main Dashboard -->
+    <main>
+        <h1>Welcome, Fardeen Saad.</h1>
+
+        <div class="dashboard-cards">
+            <div class="card">
+                <h2>Current Account Balance</h2>
+                <p class="balance">$438,002.09</p>
+                <div class="card-buttons">
+                    <a href="activity.html" class="btn">See Activity</a>
+                    <a href="statements.html" class="btn">Statements</a>
+                </div>
+            </div>
+            <div class="card">
+                <h2>Total Assets</h2>
+                <p class="balance">$1,224,990.20</p>
+                <div class="card-buttons">
+                    <a href="#" class="btn">See Total Assets</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Transactions Sneak Peek -->
+        <section class="recent-transactions">
+            <h2>Recent Activity</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vendor ID</th>
+                        <th>Amount</th>
+                        <th>Updated Balance</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>[AABCD12345678 001]</td>
+                        <td>+ $3,500</td>
+                        <td>$441,502.09</td>
+                        <td>Oct 28, 2025</td>
+                    </tr>
+                    <tr>
+                        <td>[XYZAB87654321 002]</td>
+                        <td>- $1,200</td>
+                        <td>$440,302.09</td>
+                        <td>Oct 27, 2025</td>
+                    </tr>
+                    <tr>
+                        <td>[LMNOP23456789 003]</td>
+                        <td>+ $2,000</td>
+                        <td>$442,302.09</td>
+                        <td>Oct 26, 2025</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="activity.html" class="see-all">See All</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">J.S.C.U.</div>
+        <p>© 2025 Jarvis Stark Computing Unit</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
