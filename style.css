@@ -102,7 +102,37 @@ footer { text-align:center; padding:2rem 0; background:#1e1e1e; margin-top:2rem;
 /* Responsive */
 @media(max-width:768px){
     .dashboard-cards { flex-direction:column; }
-    .nav-links { display:none; flex-direction:column; background:#1e1e1e; position:absolute; top:60px; right:0; width:200px; padding:1rem; border-radius:5px; }
-    .nav-links.active { display:flex; }
-    .hamburger { display:flex; }
+
+    .hamburger {
+        display:flex;
+        flex-direction:column;
+        gap:5px;
+        cursor:pointer;
+        z-index:1100;
+    }
+    .hamburger div {
+        width:25px;
+        height:3px;
+        background:#e0e0e0;
+        transition:0.3s;
+    }
+
+    .nav-links {
+        display:none;
+        flex-direction:column;
+        background:#1e1e1e;
+        position:absolute;
+        top:60px;
+        right:0;
+        width:200px;
+        padding:1rem;
+        border-radius:5px;
+        box-shadow:0 0 10px rgba(0,0,0,0.5);
+        z-index:1000;
+    }
+
+    /* 👇 This is the toggle that shows the menu */
+    .nav-links.active {
+        display:flex;
+    }
 }
